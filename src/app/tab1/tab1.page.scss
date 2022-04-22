@@ -1,0 +1,51 @@
+ion-title{
+    font-size: 26px;
+}
+.address-input{
+background-color: #EEEEEE;
+width: 90%;
+height: 50px;
+margin: 15px auto;
+border-radius: 20px;
+font-size: 20px;
+color: grey;
+padding: 10px 20px ;
+}
+.m-top-30{
+    margin-top: 30px;
+}
+.date-passenger{
+    width: 90%;
+    height: 70px;
+    margin:15px auto;
+    border-bottom: 1px solid #DFDFDE;
+    border-top: 1px solid #DFDFDE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+        color:#c6180a;
+        font-size: 18px;
+    }
+}
+.item-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    ion-icon{
+        font-size: 30px;
+        color: grey ;
+    }
+    h3{
+
+        ion-icon{
+            font-size: 20px;
+            color: black;
+        }
+    }
+    span{
+        color: grey;
+    };
+}
