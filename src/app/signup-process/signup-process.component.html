@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-slides [options]="slideOpts">
+    <ion-slide class="content">
+      <div class="content-header">
+        <ion-icon (click)="dismiss()" class="content-header-close" name="arrow-back-outline"></ion-icon>
+        <h2> E-posta adresin nedir?</h2>
+      </div>
+  
+      <div class="input-form">
+        <ion-input placeholder="E-posta" [(ngModel)]="email"></ion-input>
+        <div class="text-accept">
+          <ion-label>OneWay'den haber, fırsat ve hediye almak istemiyorum</ion-label>
+          <ion-checkbox checked="false"></ion-checkbox>
+        </div>
+      </div>
+      <p>Abone olduğumda, doğrudan OneWay ile iletişime geçerek veya haber bültenindeki bağlantıya tıklayarak istediğim
+        zaman abonelikten çıkabilirim
+      </p>
+
+      <ion-icon *ngIf="email" name="arrow-forward-circle-outline" class="content-continue"></ion-icon>
+   
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 2</h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 3</h1>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

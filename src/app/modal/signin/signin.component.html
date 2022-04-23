@@ -2,13 +2,13 @@
   <div class="content">
     <ion-icon (click)="dismiss()" name="close" class="content-close"></ion-icon>
     <h2> Nasıl kaydolmak istersin?</h2>
-    <div class="continue">
+    <div (click)="goPhone()" class="continue">
       <ion-icon name="call-outline"></ion-icon>
       <span> Telefon numarası ile devam et </span>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>
     <hr>
-    <div class="continue">
+    <div (click)="goEmail()" class="continue">
       <ion-icon name="mail-outline"></ion-icon>
       <span> E-posta ile devam et </span>
       <ion-icon name="chevron-forward-outline"></ion-icon>
