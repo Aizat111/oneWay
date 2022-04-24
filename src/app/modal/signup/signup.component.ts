@@ -27,8 +27,8 @@ export class SignupComponent implements OnInit {
       component: EMailComponent,
       cssClass: 'my-custom-class',
       componentProps: {
-        'email': 'E-Postan',
-        'emailPlaceHolder': 'E-posta'
+        'startValue': 'E-Postan',
+        'startPlaceHolder': 'E-posta'
       }
     });
     return await modal.present();
@@ -38,8 +38,8 @@ export class SignupComponent implements OnInit {
       component: EMailComponent,
       cssClass: 'my-custom-class',
       componentProps: {
-        'email': 'Telefon numaranız',
-        'emailPlaceHolder': 'Telefon numara'
+        'startValue': 'Telefon numaranız',
+        'startPlaceHolder': 'Telefon numara'
       }
     });
     return await modal.present();

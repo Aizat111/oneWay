@@ -8,8 +8,8 @@ import { ModalController } from '@ionic/angular';
 })
 export class EMailComponent implements OnInit {
   @Input() openMail=false;
-  @Input() email='';
-  @Input() emailPlaceHolder='';
+  @Input() startValue='';
+  @Input() startPlaceHolder='';
   constructor(private  modalController: ModalController) { }
 
   ngOnInit() {}

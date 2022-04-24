@@ -1,4 +1,5 @@
-import { SignupProcessComponent } from './../../signup-process/signup-process.component';
+import { SignupComponent } from './../signup/signup.component';
+import { SignupProcessComponent } from '../../signup-process/signup-process.component';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EMailComponent } from '../e-mail/e-mail.component';
@@ -23,17 +24,26 @@ export class SigninComponent implements OnInit {
   async goEmail() {
     const modal = await this.modalController.create({
       component: SignupProcessComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'startValue': 'E-posta adresin'
+      }
     });
     return await modal.present();
   }
+  async goSignup() {
+    const modal = await this.modalController.create({
+      component: SignupComponent,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  } 
   async goPhone() {
     const modal = await this.modalController.create({
       component: SignupProcessComponent,
       cssClass: 'my-custom-class',
       componentProps: {
-        'email': 'Telefon numaranız',
-        'emailPlaceHolder': 'Telefon numara'
+        'startValue': 'Telefon numaran'
       }
     });
     return await modal.present();

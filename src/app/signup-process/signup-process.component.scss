@@ -19,6 +19,11 @@ ion-content {
           font-size: 40px;
           color: #c6180a;
         }
+        span{
+          margin-top: 0px auto 15px;
+          color: grey;
+          font-size: 16px
+        };
      h2 {
           font-size: 30px;
           font-family: Arial Rounded MT Bold;
@@ -75,5 +80,10 @@ ion-content {
 
     }
     }
+  }
+  ion-radio{
+    border: 1px black solid;
+    border-radius: 100%;
+    --color-checked:#c6180a;
   }
 }
