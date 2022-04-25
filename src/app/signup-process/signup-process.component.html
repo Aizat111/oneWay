@@ -7,7 +7,7 @@
       </div>
   
       <div class="input-form">
-        <ion-input placeholder="E-posta" [(ngModel)]="_email"></ion-input>
+        <ion-input placeholder="{{startPlaceholder}}" [(ngModel)]="_email"></ion-input>
         <div class="text-accept">
           <ion-label>OneWay'den haber, fırsat ve hediye almak istemiyorum</ion-label>
           <ion-checkbox checked="false"></ion-checkbox>
@@ -16,7 +16,7 @@
       <p>Abone olduğumda, doğrudan OneWay ile iletişime geçerek veya haber bültenindeki bağlantıya tıklayarak istediğim
         zaman abonelikten çıkabilirim
       </p>
-      <ion-icon *ngIf="_email!=''" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
+      <ion-icon *ngIf="_email" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
     </ion-slide>
     <ion-slide class="content">
       <div class="content-header">
@@ -27,7 +27,7 @@
         <ion-input placeholder="Ad" [(ngModel)]="_name"></ion-input>
         <ion-input placeholder="Soyad"  [(ngModel)]="_surname"></ion-input>
       </div>
-      <ion-icon *ngIf="_surname!=''" name="arrow-forward-circle-outline" class="content-continue"></ion-icon>
+      <ion-icon *ngIf="_surname!='' && _name!=''" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
     </ion-slide>
     <ion-slide class="content"> 
       <div class="content-header">
@@ -37,11 +37,11 @@
       <div class="input-form">
         <ion-input type="date" [(ngModel)]="_date"></ion-input>
       </div>
-      <ion-icon *ngIf="_date" name="arrow-forward-circle-outline" class="content-continue"></ion-icon>
+      <ion-icon *ngIf="_date" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
     </ion-slide>
     <ion-slide class="content"> 
       <div class="content-header">
-        <ion-icon (click)="prevSlide" class="content-header-close" name="arrow-back-outline"></ion-icon>
+        <ion-icon (click)="prevSlide()" class="content-header-close" name="arrow-back-outline"></ion-icon>
         <h2> Size nasıl hitap edilmesini tercih edersiniz?</h2>
       </div>
       <div class="input-form">
@@ -64,7 +64,7 @@
           </ion-radio-group>
         </ion-list>
       </div>
-      <ion-icon *ngIf="_date" name="arrow-forward-circle-outline" class="content-continue"></ion-icon>
+      <ion-icon *ngIf="_date" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
     </ion-slide>
     <ion-slide class="content"> 
       <div class="content-header">
@@ -75,7 +75,7 @@
       <div class="input-form">
         <ion-input placeholder="Şifre" type= "password" [(ngModel)]="_password"></ion-input>
       </div>
-      <ion-icon *ngIf="_password" name="arrow-forward-circle-outline" class="content-continue"></ion-icon>
+      <ion-icon *ngIf="_password" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
     </ion-slide>
   </ion-slides>
 </ion-content>

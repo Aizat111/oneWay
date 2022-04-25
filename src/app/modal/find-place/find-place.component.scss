@@ -1,0 +1,11 @@
+.content{
+    height: 100%;
+    ion-searchbar{
+        margin:3px auto;
+        transform: scaleY(1.3);
+    }
+    &-close{
+        font-size: 30px;
+        color: #c6180a;
+    }
+}

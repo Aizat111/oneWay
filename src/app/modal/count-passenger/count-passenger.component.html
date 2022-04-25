@@ -1,3 +1,12 @@
-<p>
-  count-passenger works!
-</p>
+<ion-content>
+  <div class="content">
+    <ion-icon (click)="dismiss(false)" name="close" class="content-close"></ion-icon>
+    <h2>Rezerve etmek istediğin koltuk sayısı</h2>
+    <div class="content-countPassenger">
+      <ion-icon name="remove-circle-outline" (click)="decreasePassenger()"></ion-icon>
+      <span>{{countPassenger}}</span>
+      <ion-icon name="add-circle-outline" (click)="increasePassenger()"></ion-icon>
+    </div>
+    <ion-icon name="arrow-forward-circle-outline" class="content-continue" (click)="dismiss(true)"></ion-icon>
+  </div>
+</ion-content>

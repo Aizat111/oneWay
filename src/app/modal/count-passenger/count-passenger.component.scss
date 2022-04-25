@@ -1,0 +1,34 @@
+ion-content{
+    --backgorund:white;
+}
+.content{
+    width:90%;
+    margin:5px auto;
+    &-close{
+            font-size: 40px;
+            color: #c6180a;
+    }
+    h2{
+        font-size: 30px;
+    }
+    &-countPassenger{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        ion-icon{
+            font-size: 50px;
+        }
+        span{
+            font-size: 60px;
+            font-weight: 500;
+        }
+    }
+    &-continue{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 40px;
+        color: #c6180a;
+    }
+}

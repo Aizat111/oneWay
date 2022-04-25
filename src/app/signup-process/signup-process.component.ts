@@ -8,13 +8,14 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 })
 export class SignupProcessComponent implements OnInit {
   @ViewChild('mySlider') slides:IonSlides;
+  //controls slides
   slideOpts={
     initalSlide:0,
     slidesPerView:1,
     allowTouchMove:false
-
   };
   @Input() startValue='';
+  @Input() startPlaceholder='';
   _email='';
   _name='';
   _surname='';
@@ -30,6 +31,7 @@ export class SignupProcessComponent implements OnInit {
       'dismissed': true
     });
   }
+  
   nextSlide(){
     this.slides.slideNext();
   }

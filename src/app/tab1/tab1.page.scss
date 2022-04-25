@@ -26,6 +26,10 @@ padding: 10px 20px ;
     span{
         color:#c6180a;
         font-size: 18px;
+        ion-button{
+            --color:#c6180a;
+            --background: white;
+        }
     }
 }
 .item-list{
@@ -49,3 +53,12 @@ padding: 10px 20px ;
         color: grey;
     };
 }
+ion-modal {
+    --width: 290px;
+    --height: 382px;
+    --border-radius: 8px;
+  }
+
+  ion-modal ion-datetime {
+    height: 382px;
+  }

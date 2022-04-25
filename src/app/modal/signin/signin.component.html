@@ -1,24 +1,43 @@
+<!--Sign up-kaydolma aşaması-->
 <ion-content>
-  <div class="content">
+  <div *ngIf="visibleSignUp" class="content">
     <ion-icon (click)="dismiss()" name="close" class="content-close"></ion-icon>
     <h2> Nasıl kaydolmak istersin?</h2>
-    <div (click)="goPhone()" class="continue">
+    <div (click)="SignUpPhone()" class="continue">
       <ion-icon name="call-outline"></ion-icon>
       <span> Telefon numarası ile devam et </span>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>
     <hr>
-    <div (click)="goEmail()" class="continue">
+    <div (click)="SignUpEmail()" class="continue">
       <ion-icon name="mail-outline"></ion-icon>
       <span> E-posta ile devam et </span>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>
     <h3><b> Zaten üye misin? </b></h3>
-    <a href="#" (click)="goSignup"> Giriş yap</a>
+    <a (click)="openSignUp()"> Giriş yap</a>
     <p>Kayıt olarak <a href="#">Şartlar ver Koşullarımız</a> ile <a href="#">Gizlilik politikamızı kabul etmiş olursun.</a></p>
     <p>Kişisel verilerinle ilgili haklara sahipsin ve bu hakları OneWay ile <a href="#">iletişim formu </a>üzerinden iletişim kurarak kullanabilirsin. hakların ve kişisel verilerini nasıl kullandığımız hakkında daha fazla 
       bilgi edinemk için <a href="#">Gizlilik Politikası</a> bölümümüze bakabilirsin.
     </p>
+  </div>
 
+  <!--Sign in-Oturum açma aşaması-->
+  <div  *ngIf="!visibleSignUp" class="content">
+    <ion-icon (click)="dismiss()" name="close" class="content-close"></ion-icon>
+    <h2> Nasıl oturum açmak istersin?</h2>
+    <div (click)="SignInPhone()" class="continue">
+      <ion-icon name="call-outline"></ion-icon>
+      <span> Telefon numarası ile devam et </span>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <hr>
+    <div (click)="SignInEmail()" class="continue">
+      <ion-icon name="mail-outline"></ion-icon>
+      <span> E-posta ile devam et </span>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <h3><b> Henüz üye değil misin? </b></h3>
+    <a (click)="openSignUp()"> Üye ol</a>
   </div>
 </ion-content>

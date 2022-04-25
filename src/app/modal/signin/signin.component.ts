@@ -1,6 +1,5 @@
-import { SignupComponent } from './../signup/signup.component';
 import { SignupProcessComponent } from '../../signup-process/signup-process.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EMailComponent } from '../e-mail/e-mail.component';
 
@@ -11,8 +10,9 @@ import { EMailComponent } from '../e-mail/e-mail.component';
 })
 export class SigninComponent implements OnInit {
 
+  @Input() visibleSignUp=false;
   constructor(private modalController: ModalController) { }
-
+  
   ngOnInit() {}
   dismiss() {
     // using the injected ModalController this page
@@ -21,31 +21,62 @@ export class SigninComponent implements OnInit {
       'dismissed': true
     });
   }
-  async goEmail() {
+  openSignUp()
+  {
+    this.visibleSignUp=!this.visibleSignUp;
+  }
+
+  async SignUpEmail() {
     const modal = await this.modalController.create({
       component: SignupProcessComponent,
       cssClass: 'my-custom-class',
       componentProps: {
-        'startValue': 'E-posta adresin'
+        'startValue': 'E-posta adresin',
+        'startPlaceholder':'E-posta'
       }
     });
     return await modal.present();
   }
-  async goSignup() {
-    const modal = await this.modalController.create({
-      component: SignupComponent,
-      cssClass: 'my-custom-class'
-    });
-    return await modal.present();
-  } 
-  async goPhone() {
+ 
+  async SignUpPhone() {
     const modal = await this.modalController.create({
       component: SignupProcessComponent,
       cssClass: 'my-custom-class',
       componentProps: {
-        'startValue': 'Telefon numaran'
+        'startValue': 'Telefon numaran',
+        'startPlaceholder':'Telefon numara'
       }
     });
+    return await modal.present();
+  }
+
+  async SignInEmail() {
+    const modal = await this.modalController.create({
+      component: EMailComponent,
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'startValue': 'E-Postan',
+        'startPlaceHolder': 'E-posta'
+      }
+    });
+    modal.onDidDismiss().then(count=>{
+    this.dismiss()
+    });
+    return await modal.present();
+  }
+
+  async SignInPhone() {
+    const modal = await this.modalController.create({
+      component: EMailComponent,
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'startValue': 'Telefon numaranız',
+        'startPlaceHolder': 'Telefon numara'
+      }
+    });
+    modal.onDidDismiss().then(count=>{
+      this.dismiss()
+      });
     return await modal.present();
   }
 

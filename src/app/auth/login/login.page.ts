@@ -1,4 +1,3 @@
-import { SignupComponent } from './../../modal/signup/signup.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
@@ -13,25 +12,29 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router, private  modalController: ModalController) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
   onSubmit(form)
   {
     this.router.navigate(['tabs']);
   }
-  async goSignup() {
-    const modal = await this.modalController.create({
-      component: SignupComponent,
-      cssClass: 'my-custom-class'
-    });
-    return await modal.present();
-  }
   async goSignin() {
     const modal = await this.modalController.create({
       component: SigninComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'visibleSignUp':false
+      }
     });
     return await modal.present();
-  }
+ } 
+ async goSignup() {
+  const modal = await this.modalController.create({
+    component: SigninComponent,
+    cssClass: 'my-custom-class',
+    componentProps: {
+      'visibleSignUp':true
+    }
+  });
+  return await modal.present();
+} 
 }

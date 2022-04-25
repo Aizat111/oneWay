@@ -2,15 +2,13 @@
 <ion-content>
     <div class="content">
       <ion-icon (click)="dismiss()" class="content-close" name="arrow-back-outline"></ion-icon>
-      <h2> {{email}} ve parolan nedir?</h2>
+      <h2> {{startValue}} ve parolan nedir?</h2>
       <div class="input-form">
-        <ion-input placeholder="{{emailPlaceHolder}}"></ion-input>
-        <ion-input placeholder="Şifre"></ion-input>
+        <ion-input placeholder="{{startPlaceHolder}}" [(ngModel)]="_email"></ion-input>
+        <ion-input placeholder="Şifre" [(ngModel)]="_password"></ion-input>
       </div>
       <a >Şifremi unuttum </a>
+      <ion-icon  *ngIf="_email && _password" name="arrow-forward-circle-outline" class="content-continue" (click)="onSubmit()"></ion-icon>
     </div>
-
-
-
   </ion-content>
   
