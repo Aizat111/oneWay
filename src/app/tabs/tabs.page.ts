@@ -1,3 +1,4 @@
+import { Tab5Page } from './../tab5/tab5.page';
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { SigninComponent } from '../modal/signin/signin.component';
@@ -18,5 +19,7 @@ export class TabsPage {
     });
     return await modal.present();
   }
+
+  
 
 }
