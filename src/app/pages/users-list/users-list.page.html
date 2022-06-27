@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="ion-no-border"  >
+
+    <div class="header">
+      <div class="header-title">
+        <ion-back-button slot="start" text="" color="light">
+        </ion-back-button>
+        <div class="title">
+          <h5>Istanbul -> Konya</h5>
+          <span class="date">Cum. 08 Tem, 1 yolcu</span> 
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="wrapper" *ngFor="let item of [].constructor(5)">
+    <app-user-item></app-user-item>
+  </div>
+
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="#c6180a">
+    <ion-buttons slot="start" text="">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <ion-list class="main-header">
+    <div align="center">
+
+
+
+      <ion-avatar>
+        <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" alt="profile photo">
+      </ion-avatar>
+      <h3>Aizat</h3>
+    </div>
+  </ion-list>
+  <ion-row class="">
+    <ion-segment (ionChange)="segmentChanged($event)" value="1" >
+      <ion-segment-button  class="ion-text-center" value="1">
+        <ion-label>Alındı</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  class="ion-text-center" value="2">
+        <ion-label>Verildi</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-row>
+
+  <ion-list *ngIf="slider">
+    <ion-item *ngFor="let item of [].constructor(10)">
+      <ion-avatar slot="start">
+        <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" />
+      </ion-avatar>
+      <ion-label>
+        <h3>Lorem ipsum</h3>
+        <p>dolor sit amet</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="!slider">
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" />
+      </ion-avatar>
+      <ion-label>
+        <h3>Lorem ipsum</h3>
+        <p>dolor sit amet</p>
+      </ion-label>
+    </ion-item>
+  
+  </ion-list>
+</ion-content>

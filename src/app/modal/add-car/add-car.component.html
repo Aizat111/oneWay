@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-slides [options]="slideOpts" #mySlider>
+    <ion-slide class="content">
+      <div class="content-header">
+        <ion-icon (click)="dismiss()" class="content-header-close" name="arrow-back-outline"></ion-icon>
+        <h2>  Önce isim doğrulamalısın</h2>
+      </div>
+  
+      <div class="input-form">
+        <ion-input placeholder="Araba Plakası" [(ngModel)]="_plaka"></ion-input>
+      </div>
+      <div class="input-form">
+        <ion-input placeholder="Araba Adı" [(ngModel)]="_carName"></ion-input>
+      </div>
+
+      <ion-icon name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
+    </ion-slide>
+    <ion-slide class="content">
+      <div class="content-header">
+        <ion-icon (click)="prevSlide()" class="content-header-close" name="arrow-back-outline"></ion-icon>
+        <h2>Arabanızı görelim?</h2>
+      </div>
+      <div class="item-list1">
+     
+        <ion-button (click)="dismiss()"  color="danger">Resim Yükle</ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

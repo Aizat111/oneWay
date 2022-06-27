@@ -1,0 +1,82 @@
+.wrapper{
+    h1{
+        padding: 0px 25px;
+    }
+    h3{
+        margin: 30px 5px 5px 5px;
+        padding: 0px 20px;
+        font-size: 17px;
+    }
+}
+.container{
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px 20px;
+    &-header{
+        min-height: 90px;
+        display: flex;
+        position: relative;
+        margin-bottom: 5px;
+        &-time{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .city{
+            font-size: 12px;
+        }
+        &-place{
+            margin-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .price{
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+        }
+        &-footer{
+            margin-top: 20px;
+        }
+    }
+}
+hr{
+    height: 6px;
+    background: #CCCCCC;
+}
+.price-info{
+    width: 90%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    &-title{
+        h5{
+            margin: 1px;
+            font-size: 15px;
+        }
+        span{
+            font-size: 13px;
+        }
+
+    }
+    .cash{
+        font-size: 18px;
+    }
+}
+
+.next{
+    width: 100% !important;
+   padding: 5px auto;
+    button{
+        height: 50px;
+        border-radius: 30px;
+        width: 80%;
+        margin: 10px auto;
+        position: fixed;
+        bottom: 10px;
+        left:10%
+
+    }
+}

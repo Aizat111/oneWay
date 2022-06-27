@@ -1,28 +1,29 @@
 <ion-content [fullscreen]="true">
+  
   <ion-toolbar color="#c6180a">
     <h2>Profil</h2>
   </ion-toolbar>
   <ion-list class="main-header">
     <div align="center">
       <ion-icon name="ellipsis-vertical-outline" id="trigger-button"></ion-icon>
-<ion-popover trigger="trigger-button">
-  <ng-template>
-    <ion-content>
-      <ion-list>
-        <ion-item>
-          <ion-list>
-          Fotografımı düzenle
-        </ion-list>
-        </ion-item>
-        <ion-item>
-          <ion-list>
-            Bilgilerimi düzenle
-          </ion-list>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ng-template>
-</ion-popover>
+      <ion-popover trigger="trigger-button">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              <ion-item>
+                <ion-list>
+                  Fotografımı düzenle
+                </ion-list>
+              </ion-item>
+              <ion-item>
+                <ion-list>
+                  Bilgilerimi düzenle
+                </ion-list>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
 
       <ion-avatar>
         <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" alt="profile photo">
@@ -30,31 +31,25 @@
       <h3>Aizat</h3>
     </div>
   </ion-list>
-  <ion-row class="ion-padding-horizontal">
-    <ion-col size="6">
-      <ion-item lines="none" class="ion-text-center">
-        <ion-label>
-          <h2>Bilgilerim</h2>
-        </ion-label>
-      </ion-item>
-    </ion-col>
-    <ion-col size="6">
-      <ion-item lines="none" class="ion-text-center">
-        <ion-label>
-          <h2>Hesap</h2>
-        </ion-label>
-      </ion-item>
-    </ion-col>
+  <ion-row class="">
+    <ion-segment (ionChange)="segmentChanged($event)" value="1" >
+      <ion-segment-button  class="ion-text-center" value="1">
+        <ion-label>Bilgilerim</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  class="ion-text-center" value="2">
+        <ion-label>Hesap</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-row>
-  
-  <ion-list>
+
+  <ion-list *ngIf="slider">
     <ion-item>
       <ion-label>
         <ion-text>Profilini doğrula</ion-text>
         <ul>
-          <li>Kimliğimi doğrula</li>
-          <li>Telefonumu ekle</li>
-          <li>Doğrula: aizaesen@gmail.com</li>
+          <li (click)="goAuth()">Kimliğimi doğrula</li>
+          <li (click)="goNumber('1')">Telefonumu ekle</li>
+          <li (click)="goNumber('2')">Doğrula: aizaesen@gmail.com</li>
         </ul>
       </ion-label>
     </ion-item>
@@ -62,7 +57,7 @@
       <ion-label>
         <ion-text>Hakkında</ion-text>
         <ul>
-          <li>Kısa özgeçmişimi yaz</li>
+          <li (click)="goAboutMe('1')">Kısa özgeçmişimi yaz</li>
           <li>Tercihlerimi ekle</li>
         </ul>
       </ion-label>
@@ -71,9 +66,45 @@
       <ion-label>
         <ion-text>Araba</ion-text>
         <ul>
-          <li>Araba ekle</li>
+          <li (click)="goAddCar('')">Araba ekle</li>
         </ul>
       </ion-label>
     </ion-item>
+  </ion-list>
+  <ion-list *ngIf="!slider">
+    <ion-item>
+      <ion-label>
+        <ion-text>Puanlarım</ion-text>
+        <ul>
+          <li routerLink="/stars">Puanlar</li>
+        </ul>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text>Tercihler</ion-text>
+        <ul>
+          <li>Bildirim ve İletişim</li>
+          <li>Şifre değiştirme</li>
+          <li>Posta adresi</li>
+        </ul>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text>Hakkında</ion-text>
+        <ul>
+          <li>Yardım</li>
+          <li>Şartlar ve Koşullar</li>
+          <li>Veri koruma</li>
+          <li>Lisanslar</li>
+        </ul>
+      </ion-label>
+     
+    </ion-item>
+    <ion-item style="text-align: center;">
+      <ion-label>ÇIKIŞ YAP</ion-label>
+    </ion-item>
+  
   </ion-list>
 </ion-content>

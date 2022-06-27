@@ -1,0 +1,36 @@
+.container{
+    width: 90%;
+    border-radius: 20px;
+    margin: 5px auto;
+
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px #888888;
+    &-header{
+        min-height: 60px;
+        display: flex;
+        position: relative;
+        margin-bottom: 5px;
+        &-time{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .passenger-count{
+            font-size: 12px;
+        }
+        &-place{
+            margin-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        
+            .price{
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+        }
+     
+    }
+   
+}

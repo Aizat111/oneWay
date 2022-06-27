@@ -1,3 +1,6 @@
+import { UserItemComponent } from './components/user-item/user-item.component';
+import { AddCarComponent } from './modal/add-car/add-car.component';
+import { NumberIdentyComponent } from './modal/number-identy/number-identy.component';
 import { FindPlaceComponent } from './modal/find-place/find-place.component';
 import { EMailComponent } from './modal/e-mail/e-mail.component';
 import { SigninComponent } from 'src/app/modal/signin/signin.component';
@@ -10,10 +13,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountPassengerComponent } from './modal/count-passenger/count-passenger.component';
+import { AuthIDComponent } from './modal/auth-id/auth-id.component';
+
 
 @NgModule({
-  declarations: [AppComponent,SignupProcessComponent,SigninComponent,EMailComponent,FindPlaceComponent,CountPassengerComponent],
-  entryComponents: [],
+  declarations: [AppComponent,SignupProcessComponent,SigninComponent,EMailComponent,FindPlaceComponent,CountPassengerComponent,AuthIDComponent,NumberIdentyComponent,AddCarComponent],
+  entryComponents: [AuthIDComponent,NumberIdentyComponent,AddCarComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -1,0 +1,114 @@
+ion-content {
+    --background: white;
+    ion-slides {
+      height: 100%;
+      //width: 90%;
+      .content {
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 5px auto;
+        &-header {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          &-close {
+            font-size: 40px;
+            color: #c6180a;
+          }
+          span{
+            margin-top: 0px auto 15px;
+            color: grey;
+            font-size: 16px
+          };
+       h2 {
+            font-size: 30px;
+            font-family: Arial Rounded MT Bold;
+            color: black;
+            margin-bottom: 50px;
+  
+            text-align: left;
+          }
+        }
+  
+        hr {
+          height: 1px;
+          background-color: grey;
+          margin: 20px auto;
+        }
+        .input-form {
+          width: 90%;
+          text-align: left;
+          ion-input {
+            height: 60px;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 15px;
+            --padding-start: 25px;
+            border-radius: 20px;
+            background-color: #EEEEEE;
+          }
+          .text-accept{
+              margin-top: 30px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              ion-checkbox{
+               width: 40px;
+               margin-left: 10px;
+              }
+              ion-label{
+                  font-size: 22px;
+              }
+          }
+        }
+        p {
+          width: 90%;
+          color: grey;
+          font-size: 13px;
+          text-align: left;
+          margin-top: 40px;
+  
+        }
+      &-continue{
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          font-size: 40px;
+          color: #c6180a;
+  
+      }
+      }
+    }
+    ion-radio{
+      border: 1px black solid;
+      border-radius: 100%;
+      --color-checked:#c6180a;
+    }
+  }
+  
+  .item-list1{
+      display: flex;
+      justify-content:center;
+      text-align: center;
+      align-items: center;
+      width: 80%;
+      margin: 10px auto;
+
+      ion-icon{
+          font-size: 30px;
+          color: grey ;
+      }
+      h3{
+          text-align: left;
+          ion-icon{
+              font-size: 20px;
+              color: black;
+          }
+      }
+  
+  }

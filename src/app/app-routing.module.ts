@@ -23,6 +23,22 @@ const routes: Routes = [
     path: 'tab5',
     loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule)
   },
+  {
+    path: 'stars',
+    loadChildren: () => import('./pages/stars/stars.module').then( m => m.StarsPageModule)
+  },
+  {
+    path: 'users-list',
+    loadChildren: () => import('./pages/users-list/users-list.module').then( m => m.UsersListPageModule)
+  },
+  {
+    path: 'choose',
+    loadChildren: () => import('./pages/choose/choose.module').then( m => m.ChoosePageModule)
+  },
+  {
+    path: 'reservation',
+    loadChildren: () => import('./pages/reservation/reservation.module').then( m => m.ReservationPageModule)
+  },
  
 ];
 @NgModule({

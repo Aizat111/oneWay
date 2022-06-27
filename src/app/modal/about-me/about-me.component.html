@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-slides [options]="slideOpts" #mySlider>
+    <ion-slide class="content">
+      <div class="content-header">
+        <ion-icon (click)="dismiss()" class="content-header-close" name="arrow-back-outline"></ion-icon>
+        <h2>Diğer üyelerin senin hakkında neleri bilmesini istersin?</h2>
+      </div>
+  
+      <div class="input-form">
+        <textarea rows="5" placeholder="" [(ngModel)]="_aboutMe"></textarea>
+      </div>
+     <div>
+      <ion-button (click)="dismiss()"  color="danger">Keydet</ion-button>
+     </div>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

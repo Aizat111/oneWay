@@ -1,30 +1,31 @@
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, ModalController } from '@ionic/angular';
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-signup-process',
-  templateUrl: './signup-process.component.html',
-  styleUrls: ['./signup-process.component.scss'],
+  selector: 'app-number-identy',
+  templateUrl: './number-identy.component.html',
+  styleUrls: ['./number-identy.component.scss'],
 })
-export class SignupProcessComponent implements OnInit {
+export class NumberIdentyComponent implements OnInit {
+  @Input() type='';
   @ViewChild('mySlider') slides:IonSlides;
-  //controls slides
+  _email='';
+  _firstname='';
+  _lastname='';
+  _date='';
+  _password='';
   slideOpts={
     initalSlide:0,
     slidesPerView:1,
     allowTouchMove:false
   };
-  @Input() startValue='';
-  @Input() startPlaceholder='';
-  _email='';
-  _name='';
-  _surname='';
-  _date='';
-  _password='';
+  code = '';
   constructor(private modalController:ModalController) { }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    console.log(this.type);
+    
+  }
   dismiss() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
