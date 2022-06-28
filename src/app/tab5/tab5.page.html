@@ -11,7 +11,7 @@
           <ion-content>
             <ion-list>
               <ion-item>
-                <ion-list>
+                <ion-list  (click)="changeImage()">
                   Fotografımı düzenle
                 </ion-list>
               </ion-item>
@@ -26,9 +26,9 @@
       </ion-popover>
 
       <ion-avatar>
-        <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" alt="profile photo">
+        <img src="{{imgUrl?imgUrl:'https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg'}}" alt="profile photo">
       </ion-avatar>
-      <h3>Aizat</h3>
+      <h3>{{profile.name}} {{profile.surname}}</h3>
     </div>
   </ion-list>
   <ion-row class="">
@@ -49,15 +49,17 @@
         <ul>
           <li (click)="goAuth()">Kimliğimi doğrula</li>
           <li (click)="goNumber('1')">Telefonumu ekle</li>
-          <li (click)="goNumber('2')">Doğrula: aizaesen@gmail.com</li>
+          <li (click)="goNumber('2')">Doğrula: {{profile.email}}</li>
         </ul>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-label>
         <ion-text>Hakkında</ion-text>
+
+      
         <ul>
-          <li (click)="goAboutMe('1')">Kısa özgeçmişimi yaz</li>
+          <li (click)="goAboutMe('1')">  {{userData?.content ? userData?.content:'Kısa özgeçmişimi yaz'}}</li>
           <li>Tercihlerimi ekle</li>
         </ul>
       </ion-label>
@@ -103,7 +105,7 @@
      
     </ion-item>
     <ion-item style="text-align: center;">
-      <ion-label>ÇIKIŞ YAP</ion-label>
+      <ion-label  (click)="logout()">ÇIKIŞ YAP</ion-label>
     </ion-item>
   
   </ion-list>

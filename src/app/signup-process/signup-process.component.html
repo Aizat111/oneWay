@@ -1,23 +1,41 @@
 <ion-content>
   <ion-slides [options]="slideOpts" #mySlider>
+ 
     <ion-slide class="content">
+      <form (ngSubmit)="login()" [formGroup]="credentials">
       <div class="content-header">
         <ion-icon (click)="dismiss()" class="content-header-close" name="arrow-back-outline"></ion-icon>
         <h2> {{startValue}} nedir?</h2>
       </div>
   
       <div class="input-form">
-        <ion-input placeholder="{{startPlaceholder}}" [(ngModel)]="_email"></ion-input>
-        <div class="text-accept">
-          <ion-label>OneWay'den haber, fırsat ve hediye almak istemiyorum</ion-label>
-          <ion-checkbox checked="false"></ion-checkbox>
-        </div>
+        <ion-input type="email" placeholder="{{startPlaceholder}}"  formControlName="email" ></ion-input>
+        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid</ion-note>
+    
+  
+      </div>
+      <div class="content-header">
+     
+        <h4> Parolaya ihtiyacın olacak. </h4>
+          <span>1 harf, 1 rakam ve 1 özel karakter içerecek şekilde en az 8 karakterden oluşmalıdır.</span>
+      </div>
+      <div class="input-form">
+        <ion-input type="password" placeholder="Şifre" type= "password" formControlName="password"></ion-input>
+        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs to be 6 characters</ion-note>
+ 
       </div>
       <p>Abone olduğumda, doğrudan OneWay ile iletişime geçerek veya haber bültenindeki bağlantıya tıklayarak istediğim
         zaman abonelikten çıkabilirim
       </p>
-      <ion-icon *ngIf="_email" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
+      <div class="text-accept">
+        <ion-label>OneWay'den haber, fırsat ve hediye almak istemiyorum</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+      </div>
+      <ion-icon name="arrow-forward-circle-outline" class="content-continue" (click)="register()"></ion-icon>
+    </form>
     </ion-slide>
+
+
     <ion-slide class="content">
       <div class="content-header">
         <ion-icon (click)="prevSlide()" class="content-header-close" name="arrow-back-outline"></ion-icon>
@@ -46,7 +64,7 @@
       </div>
       <div class="input-form">
         <ion-list>
-          <ion-radio-group value="gender"> 
+          <ion-radio-group value="gender" [(ngModel)]="_gendar"> 
             <ion-item>
               <ion-label>Bay</ion-label>
               <ion-radio slot="start" value="male"></ion-radio>
@@ -64,18 +82,8 @@
           </ion-radio-group>
         </ion-list>
       </div>
-      <ion-icon *ngIf="_date" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
+      <ion-icon *ngIf="_date" name="arrow-forward-circle-outline" class="content-continue" (click)="regUser()"></ion-icon>
     </ion-slide>
-    <ion-slide class="content"> 
-      <div class="content-header">
-        <ion-icon (click)="prevSlide()" class="content-header-close" name="arrow-back-outline"></ion-icon>
-        <h2> Parolaya ihtiyacın olacak. </h2>
-          <span>1 harf, 1 rakam ve 1 özel karakter içerecek şekilde en az 8 karakterden oluşmalıdır.</span>
-      </div>
-      <div class="input-form">
-        <ion-input placeholder="Şifre" type= "password" [(ngModel)]="_password"></ion-input>
-      </div>
-      <ion-icon *ngIf="_password" name="arrow-forward-circle-outline" class="content-continue" (click)="nextSlide()"></ion-icon>
-    </ion-slide>
+
   </ion-slides>
 </ion-content>

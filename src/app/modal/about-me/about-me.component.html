@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-slides [options]="slideOpts" #mySlider>
+  <ion-slides #mySlider>
     <ion-slide class="content">
       <div class="content-header">
         <ion-icon (click)="dismiss()" class="content-header-close" name="arrow-back-outline"></ion-icon>
@@ -10,7 +10,7 @@
         <textarea rows="5" placeholder="" [(ngModel)]="_aboutMe"></textarea>
       </div>
      <div>
-      <ion-button (click)="dismiss()"  color="danger">Keydet</ion-button>
+      <ion-button (click)="addAboutMe()"  color="danger">Keydet</ion-button>
      </div>
     </ion-slide>
 
