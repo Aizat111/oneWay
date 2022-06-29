@@ -1,1 +1,38 @@
-findPlace()
+<ion-content class="tab2">
+    <div class="header">
+        oneWay
+    </div>
+
+    <div class="wrapper" *ngFor="let item of posts">
+        <div class="container" routerLink="/choose">
+            <div class="container-header">
+                <div class="container-header-time">
+                    <span>{{item.date}}</span>
+                    <span>{{item.time}}</span>
+                </div>
+                <div class="container-header-place">
+                    <span>{{item.from_city_name}} <br> <span class="passenger-count">{{item.totalCountPsgnr}}
+                            yolcu</span> </span>
+                    <span>{{item.to_city_name}}</span>
+                    <span class="price">{{item?.price}} TL</span>
+                </div>
+            </div>
+            <div class="container-footer">
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" />
+                    </ion-avatar>
+                    <ion-label>
+                        <h3>Lorem ipsum</h3>
+                        <p>dolor sit amet</p>
+                    </ion-label>
+                </ion-item>
+            </div>
+        </div>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="findPlace()" color="danger">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

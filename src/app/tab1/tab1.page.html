@@ -4,85 +4,43 @@
       <ion-title size="large">Yolculuk ara</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div class="address-input m-top-30" (click)="findPlace()"> Kalkış yeri</div>
-  <div class="address-input" (click)="findPlace()"> Varış yeri</div>
+  <div class="address-input m-top-30" (click)="findPlace(true)"> {{from!=''?from.name:'Kalkış yeri'}} </div>
+  <div class="address-input" (click)="findPlace(false)"> {{to!=''?to.name:'Varış yeri'}} </div>
   <div class="date-passenger">
     <span>
-      <ion-button id="open-modal">{{todaysDate}}
-      </ion-button>
-      <ion-modal trigger="open-modal">
-        <ng-template>
-          <ion-content>
-            <ion-datetime>
-              <ion-buttons slot="buttons">
-                <ion-button (click)="confirm()">Good to go!</ion-button>
-                <ion-button (click)="reset()">Reset</ion-button>
-              </ion-buttons>
-            </ion-datetime>
-          </ion-content>
-        </ng-template>
-      </ion-modal>
+      <input type="date" [(ngModel)]="todaysDate">
     </span>
     <span (click)="countPassenger()">
       {{countPsgnr}} yolcu
     </span>
   </div>
-  <div class="content">
-    <div class="item-list" routerLink="/users-list">
-      <ion-icon name="time-outline"></ion-icon>
-      <div class="text">
-        <h3>Konya Otogarı <ion-icon name="arrow-forward-outline"></ion-icon>Samsun </h3>
-        <span> 1 yolcu</span>
+  <div class="wrapper" *ngFor="let item of posts">
+    <div class="container" routerLink="/choose">
+        <div class="container-header">
+          <div class="container-header-time">
+            <span>{{item.date}}</span>
+            <span>{{item.time}}</span>
+          </div>
+          <div class="container-header-place">
+            <span>{{item.from_city_name}} <br> <span class="passenger-count">{{item.totalCountPsgnr}} yolcu</span> </span>
+            <span>{{item.to_city_name}}</span>
+            <span class="price">{{item?.price}} TL</span>
+          </div>
+        </div>
+        <div class="container-footer">
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" />
+            </ion-avatar>
+            <ion-label>
+              <h3>Lorem ipsum</h3>
+              <p>dolor sit amet</p>
+            </ion-label>
+          </ion-item>
+        </div>
       </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="item-list">
-      <ion-icon name="time-outline"></ion-icon>
-      <div class="text">
-        <h3>Konya Otogarı <ion-icon name="arrow-forward-outline"></ion-icon>Samsun </h3>
-        <span> 1 yolcu</span>
-      </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="item-list">
-      <ion-icon name="time-outline"></ion-icon>
-      <div class="text">
-        <h3>Konya Otogarı <ion-icon name="arrow-forward-outline"></ion-icon>Samsun </h3>
-        <span> 1 yolcu</span>
-      </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="item-list">
-      <ion-icon name="time-outline"></ion-icon>
-      <div class="text">
-        <h3>Konya Otogarı <ion-icon name="arrow-forward-outline"></ion-icon>Samsun </h3>
-        <span> 1 yolcu</span>
-      </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="item-list">
-      <ion-icon name="time-outline"></ion-icon>
-      <div class="text">
-        <h3>Konya Otogarı <ion-icon name="arrow-forward-outline"></ion-icon>Samsun </h3>
-        <span> 1 yolcu</span>
-      </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="item-list">
-      <ion-icon name="time-outline"></ion-icon>
-      <div class="text">
-        <h3>Konya Otogarı <ion-icon name="arrow-forward-outline"></ion-icon>Samsun </h3>
-        <span> 1 yolcu</span>
-      </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="item-list">
-      <ion-icon name="time-outline"></ion-icon>
-      <div class="text">
-        <h3>Konya Otogarı <ion-icon name="arrow-forward-outline"></ion-icon>Samsun </h3>
-        <span> 1 yolcu</span>
-      </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
+  </div>
+  <div class="btn" >
+    <button [disabled]="!todaysDate || !from || !to || !countPsgnr" (click)="search()" color="danger">Ara</button>
   </div>
 </ion-content>

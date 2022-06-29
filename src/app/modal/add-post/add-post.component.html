@@ -1,0 +1,65 @@
+<ion-content class="tab2">
+  <div class="header">
+      oneWay
+      <ion-icon (click)="dismiss()" size="large" name="close-circle-outline"></ion-icon>
+  </div>
+  <div class="title">
+      <ion-item>
+          <textarea [(ngModel)]="title" rows="5" placeholder="Acıklama"></textarea>
+      </ion-item>
+  </div>
+  <div class="date-passenger">
+
+
+      <input type="date" [(ngModel)]="todaysDate">
+
+      <span (click)="countPassenger()">
+          {{countPsgnr}} yolcu
+      </span>
+  </div>
+  <div class="select-trip">
+      <div class="from">
+          <ion-item>
+              <ion-label position="floating">Ücreti</ion-label>
+              <ion-input [(ngModel)]="price" type="number"></ion-input>
+          </ion-item>
+      </div>
+      <div class="to">
+          <ion-item>
+      
+              <ion-input [(ngModel)]="time" type="time" ></ion-input>
+          </ion-item>
+      </div>
+  </div>
+  <div class="select-trip">
+      <div class="from">
+          <ion-item (click)="selectLoc(false)">
+              <ion-label position="floating">From</ion-label>
+              <ion-input [(ngModel)]="fromName" disabled></ion-input>
+          </ion-item>
+      </div>
+      <div class="to">
+          <ion-item (click)="selectLoc(true)">
+              <ion-label position="floating">To</ion-label>
+              <ion-input [(ngModel)]="toName" disabled></ion-input>
+          </ion-item>
+      </div>
+  </div>
+  <div class="search">
+      <input [(ngModel)]="srcKey" (change)="getCities(srcKey)" type="text">
+  </div>
+  <ion-list>
+      <ion-item (click)="selectCitiy(item)" *ngFor="let item of cities">
+
+          <ion-icon *ngIf="!switchControl" name="navigate-outline" slot="start"></ion-icon>
+          <ion-icon *ngIf="switchControl" name="locate-outline"></ion-icon>
+          <ion-label>
+              {{item.name}}
+          </ion-label>
+      </ion-item>
+  </ion-list>
+
+  <div class="btn">
+    <button [disabled]="!todaysDate || !price || !time || !from || !to || !countPsgnr" (click)="addPost()" color="danger">Kaydet</button>
+  </div>
+</ion-content>

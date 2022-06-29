@@ -6,8 +6,18 @@
     type="address-line1"
     debounce="500"
     ionFocus
-    ionBlur>
+    ionBlur [(ngModel)]="srcKey" (change)="getCities(srcKey)">
     
   </ion-searchbar>
+  <ion-list>
+    <ion-item (click)="selectCitiy(item)" *ngFor="let item of cities">
+
+        <ion-icon *ngIf="!switchControl" name="navigate-outline" slot="start"></ion-icon>
+        <ion-icon *ngIf="switchControl" name="locate-outline"></ion-icon>
+        <ion-label>
+            {{item.name}}
+        </ion-label>
+    </ion-item>
+</ion-list>
   </div>
 </ion-content>

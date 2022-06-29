@@ -13,7 +13,7 @@ import {
 } from '@angular/fire/storage';
 import { addDoc, doc, docData, Firestore, setDoc, updateDoc } from '@angular/fire/firestore';
 import { Photo } from '@capacitor/camera';
-import { collection } from 'firebase/firestore';
+
 @Injectable({
   providedIn: 'root',
 })

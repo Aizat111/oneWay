@@ -9,8 +9,15 @@
         text-align: center;
         font-size: 24px;
         color: #c6180a;
+        position: relative;
+        ion-icon{
+            position: absolute;
+            top: 5px;
+            right: 15px;
+        }
     }
     .title{
+        margin-top: 30px;
         textarea {
         
             width: 100%;
@@ -86,39 +93,18 @@ input[type="date"] {
     cursor: pointer;
   }
 
-  .container{
-    width: 90%;
-    border-radius: 20px;
-    margin: 5px auto;
+.btn{
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    text-align: center;
 
-    padding: 10px;
-    box-shadow: 1px 1px 1px 1px #888888;
-    &-header{
-        min-height: 60px;
-        display: flex;
-        position: relative;
-        margin-bottom: 5px;
-        &-time{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .passenger-count{
-            font-size: 12px;
-        }
-        &-place{
-            margin-left: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        
-            .price{
-                position: absolute;
-                right: 20px;
-                top: 10px;
-            }
-        }
-     
+    button{
+        width: 150px;
+        height: 40px;
+        margin: 0px auto;
+        border-radius: 20px;
+        background-color: #c6180a;
+        color: #fff;
     }
-   
 }

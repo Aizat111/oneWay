@@ -1,7 +1,8 @@
 import { FindPlaceComponent } from './../modal/find-place/find-place.component';
 import { IonDatetime, ModalController } from '@ionic/angular';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { CountPassengerComponent } from '../modal/count-passenger/count-passenger.component';
+import { PublishService } from '../services/publish/publish.service';
 
 @Component({
   selector: 'app-tab1',
@@ -12,8 +13,11 @@ export class Tab1Page implements OnInit{
 
   countPsgnr=1;
   todaysDate:any=new Date();
+  from:any = [];
+  to:any = [];
+  posts:any = [];
   @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
-  constructor(private modalController:ModalController) {}
+  constructor(private modalController:ModalController, private postApi: PublishService,    private _cdr: ChangeDetectorRef) {}
   ngOnInit(){
     this.todaysDate=this.todaysDate.toString().slice(3,15);
   }
@@ -30,11 +34,17 @@ export class Tab1Page implements OnInit{
    return await modal.present();
   }
 
-  async findPlace(){
+  async findPlace(type: boolean){
     const modal = await this.modalController.create({
       component: FindPlaceComponent,
       cssClass: 'my-custom-class'
+
     });
+    modal.onDidDismiss().then(location=>{
+      if(location.data.dismissed)
+      if(type) this.from = location.data.location;
+      else this.to = location.data.location;
+         });
     return await modal.present();
   }
 
@@ -44,6 +54,16 @@ export class Tab1Page implements OnInit{
   
   reset() {
     this.datetime[0].nativeEl.reset();
+  }
+  search(){
+    const body = {
+      from: this.from.id,
+      to: this.to.id
+    }
+   this.postApi.getSearchResults(body).subscribe(data=>{
+    console.log(data);
+    this.posts = data;
+   })
   }
   }
 

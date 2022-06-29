@@ -62,3 +62,78 @@ ion-modal {
   ion-modal ion-datetime {
     height: 382px;
   }
+
+  .btn{
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    text-align: center;
+
+    button{
+        width: 150px;
+        height: 40px;
+        margin: 0px auto;
+        border-radius: 20px;
+        background-color: #c6180a;
+        color: #fff;
+    }
+}
+
+input,
+select,.visible-text {
+  box-sizing: border-box;
+  height: 48px;
+  width: 30%;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  
+}
+
+input[type="date"] {
+    min-width: 100px;
+    width: 80% !important;
+    cursor: pointer;
+  }
+
+
+  .container{
+    width: 90%;
+    border-radius: 20px;
+    margin: 5px auto;
+
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px #888888;
+    &-header{
+        min-height: 60px;
+        display: flex;
+        position: relative;
+        margin-bottom: 5px;
+        &-time{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .passenger-count{
+            font-size: 12px;
+        }
+        &-place{
+            margin-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        
+            .price{
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+        }
+     
+    }
+   
+}

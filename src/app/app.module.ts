@@ -1,3 +1,4 @@
+import { AddPostComponent } from './modal/add-post/add-post.component';
 import { AboutMeComponent } from './modal/about-me/about-me.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
 import { AddCarComponent } from './modal/add-car/add-car.component';
@@ -32,7 +33,9 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     AuthIDComponent,
     NumberIdentyComponent,
     AddCarComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    AddPostComponent,
+    
   ],
   entryComponents: [AuthIDComponent, NumberIdentyComponent, AddCarComponent],
   imports: [
