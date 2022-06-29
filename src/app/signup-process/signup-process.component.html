@@ -1,7 +1,7 @@
 <ion-content>
   <ion-slides [options]="slideOpts" #mySlider>
  
-    <ion-slide class="content">
+    <ion-slide class="content ">
       <form (ngSubmit)="login()" [formGroup]="credentials">
       <div class="content-header">
         <ion-icon (click)="dismiss()" class="content-header-close" name="arrow-back-outline"></ion-icon>
@@ -28,8 +28,9 @@
         zaman abonelikten çıkabilirim
       </p>
       <div class="text-accept">
-        <ion-label>OneWay'den haber, fırsat ve hediye almak istemiyorum</ion-label>
-        <ion-checkbox checked="false"></ion-checkbox>
+        <span>OneWay'den haber, fırsat ve hediye almak istemiyorum</span>
+        <div> <ion-checkbox checked="false"></ion-checkbox></div>
+       
       </div>
       <ion-icon name="arrow-forward-circle-outline" class="content-continue" (click)="register()"></ion-icon>
     </form>

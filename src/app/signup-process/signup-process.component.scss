@@ -10,6 +10,7 @@ ion-content {
       flex-direction: column;
       justify-content: flex-start;
       margin: 5px auto;
+      // margin-left: 15px;
       &-header {
         width: 90%;
         display: flex;
@@ -21,7 +22,7 @@ ion-content {
           color: #c6180a;
         }
         span{
-          margin-top: 0px auto 15px;
+          padding: 0px 45px 0px 0px;
           color: grey;
           font-size: 16px
         };
@@ -29,7 +30,7 @@ ion-content {
           font-size: 30px;
           font-family: Arial Rounded MT Bold;
           color: black;
-          margin-bottom: 50px;
+          margin-bottom: 25px;
         }
       }
 
@@ -45,7 +46,7 @@ ion-content {
           height: 60px;
           width: 100%;
           text-align: left;
-          margin-bottom: 15px;
+          margin-bottom: 5px;
           --padding-start: 25px;
           border-radius: 20px;
           background-color: #EEEEEE;
@@ -53,14 +54,15 @@ ion-content {
         .text-accept{
             margin-top: 30px;
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             ion-checkbox{
              width: 40px;
-             margin-left: 10px;
             }
-            ion-label{
+            span{
                 font-size: 22px;
+               margin: 0px 25px 0px 0px;
             }
         }
       }
@@ -69,7 +71,7 @@ ion-content {
         color: grey;
         font-size: 13px;
         text-align: left;
-        margin-top: 40px;
+        margin-top: 20px;
 
       }
     &-continue{
