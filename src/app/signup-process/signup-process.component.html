@@ -7,7 +7,8 @@
         <ion-icon (click)="dismiss()" class="content-header-close" name="arrow-back-outline"></ion-icon>
         <h2> {{startValue}} nedir?</h2>
       </div>
-  
+
+      
       <div class="input-form">
         <ion-input type="email" placeholder="{{startPlaceholder}}"  formControlName="email" ></ion-input>
         <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid</ion-note>

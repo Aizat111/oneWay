@@ -1,13 +1,13 @@
 
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Open Chat</ion-title>
-    <ion-buttons slot="end">
-      <ion-back-button slot="start" text="" color="dark">
+<ion-header class="chat-header">
+  <ion-toolbar class="chat-header" >
+    <ion-title>{{getUser?.body?.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button slot="start" text="" color="white">
       </ion-back-button>
-      <ion-button fill="clear" (click)="signOut()">
+      <!-- <ion-button fill="clear" (click)="signOut()">
         <ion-icon name="log-out" slot="icon-only"></ion-icon>
-      </ion-button>
+      </ion-button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

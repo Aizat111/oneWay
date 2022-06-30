@@ -1,4 +1,13 @@
-
+.chat-header{
+    --background: #c6180a;
+    color: white;
+}
+ion-buttons{
+    color: white
+}
+ion-back-button {
+    color:  white;
+}
 .message-input {
     width: 100%;
     border: 1px solid var(--ion-color-medium);
@@ -17,7 +26,7 @@
 }
  
 .my-message {
-    background: var(--ion-color-tertiary);
+    background: #c6180a;
     color: #fff;
 }
  
@@ -27,7 +36,7 @@
 }
  
 .time {
-    color: #dfdfdf;
+    color: black;
     float: right;
     font-size: small;
 }
