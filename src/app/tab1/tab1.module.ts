@@ -1,3 +1,4 @@
+import { FooterUserComponent } from './../components/footer-user/footer-user.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,8 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
+   
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page, FooterUserComponent]
 })
 export class Tab1PageModule {}

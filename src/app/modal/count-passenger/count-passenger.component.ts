@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountPassengerComponent implements OnInit {
   countPassenger=1;
+  @Input() maxCount: any;
   constructor(private modalController:ModalController,private router:Router) { }
 
   ngOnInit() {}
@@ -23,6 +24,7 @@ export class CountPassengerComponent implements OnInit {
     });
   }
   increasePassenger(){
+    if(this.maxCount>this.countPassenger)
     this.countPassenger+=1;
   }
   decreasePassenger(){

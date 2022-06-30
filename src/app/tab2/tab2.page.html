@@ -4,7 +4,7 @@
     </div>
 
     <div class="wrapper" *ngFor="let item of posts">
-        <div class="container" routerLink="/choose">
+        <div class="container" [routerLink]="['/choose',item.id]">
             <div class="container-header">
                 <div class="container-header-time">
                     <span>{{item.date}}</span>
@@ -20,14 +20,14 @@
             <div class="container-footer">
                 <ion-item>
                     <ion-avatar slot="start">
-                        <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" />
+                        <img src="{{item?.userData?.imageUrl?item?.userData?.imageUrl:'https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg'}} " />
                     </ion-avatar>
                     <ion-label>
-                        <h3>Lorem ipsum</h3>
-                        <p>dolor sit amet</p>
+                        <h3>{{item?.userData?.body?.name}} {{item?.userData?.body?.surname}}</h3>
+                        <p>{{item?.userData?.body?.email}}</p>
                     </ion-label>
                 </ion-item>
-            </div>
+              </div>
         </div>
     </div>
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">

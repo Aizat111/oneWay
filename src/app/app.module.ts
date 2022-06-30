@@ -1,3 +1,4 @@
+import { FooterUserComponent } from './components/footer-user/footer-user.component';
 import { AddPostComponent } from './modal/add-post/add-post.component';
 import { AboutMeComponent } from './modal/about-me/about-me.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
@@ -35,9 +36,9 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     AddCarComponent,
     AboutMeComponent,
     AddPostComponent,
-    
+    FooterUserComponent
   ],
-  entryComponents: [AuthIDComponent, NumberIdentyComponent, AddCarComponent],
+  entryComponents: [AuthIDComponent, NumberIdentyComponent, AddCarComponent,FooterUserComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -47,7 +48,8 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

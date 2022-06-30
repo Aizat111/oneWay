@@ -12,6 +12,7 @@ import { CountPassengerComponent } from '../modal/count-passenger/count-passenge
 })
 export class Tab2Page {
   posts:any = [];
+  userData: any;
 
   constructor(private modalController:ModalController,
     private postApi: PublishService,
@@ -32,9 +33,18 @@ export class Tab2Page {
   async findPlace(){
     const modal = await this.modalController.create({
       component: AddPostComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'post': [],
+        'update': false
+      }
     });
     return await modal.present();
+  }
+  getUser(user_id:string){
+    this.postApi.getUserProfile(user_id=>{
+      
+    })
   }
 
  

@@ -28,6 +28,11 @@ export class ProfileService {
     const userDocRef = doc(this.firestore, `users/${user.uid}`);
     return docData(userDocRef, { idField: 'id' });
   }
+  getUserProfileForMsg(id:string) {
+    const user = this.auth.currentUser;
+    const userDocRef = doc(this.firestore, `users/${id}`);
+    return docData(userDocRef, { idField: 'id' });
+  }
   async uploadImage(cameraFile: Photo,body) {
     const user = this.auth.currentUser;
     const path = `uploads/${user.uid}/profile.png`;

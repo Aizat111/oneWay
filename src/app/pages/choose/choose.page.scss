@@ -104,3 +104,16 @@ hr{
 
     }
 }
+.admın-btn{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    button{
+        width: 40%;
+        height: 50px;
+        border-radius: 30px;
+        margin: 10px auto;
+ 
+    }
+}

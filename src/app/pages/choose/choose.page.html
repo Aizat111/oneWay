@@ -1,49 +1,57 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="ion-no-border">
-    <ion-back-button slot="start" text="" color="light">
+    <ion-back-button slot="start" text="" color="dark">
     </ion-back-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="wrapper">
-    <h3>Cum 08 Temmuz</h3>
-    <div class="container" routerLink="/choose">
+    <h3>{{post?.date}}</h3>
+    <div class="container">
       <div class="container-header">
         <div class="container-header-time">
-          <span>05:00</span>
-          <span>13:00</span>
+          <span>{{post?.time}}</span>
+          <span></span>
         </div>
         <div class="container-header-place">
-          <span>Konya Otagari <br> <span class="city">Konya</span> </span>
-          <span>Istanbul Otogar<br> <span class="city">Istanbul</span> </span>
+          <span>{{post?.from_city_name}} <br>
+             <!-- <span class="city">Konya</span>  -->
+            </span>
+          <span>{{post?.to_city_name}}<br> 
+            <!-- <span class="city">Istanbul</span>  -->
+        </span>
 
         </div>
       </div>
     </div>
     <hr>
-    <div class="price-blog">
-      <span>1 yolcu için toplam fiyat</span>
-      <h4>200 TL</h4>
+    <div *ngIf="userData?.uid!==post?.userData?.id" class="price-blog">
+      <span (click)="countPassenger()">{{countPsgnr}} yolcu için toplam fiyat</span>
+      <h4>{{cal(countPsgnr, post?.price)}} TL</h4>
+    </div>
+    <div  *ngIf="userData?.uid==post?.userData?.id" class="price-blog">
+      <span> {{post?.countPsgnr}}/{{post?.totalCountPsgnr}} yolcu için toplam fiyat</span>
+      <h4>{{cal(post?.countPsgnr, post?.price)}} TL</h4>
     </div>
     <hr>
     <div class="auth-blog">
       <ion-item>
         <ion-avatar slot="end">
-          <img src="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" />
+          <img src="{{post?.userData?.imageUrl?post?.userData?.imageUrl:'https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg'}} " />
         </ion-avatar>
         <ion-label>
-          <h2>Lorem ipsum</h2>
+          <h2>{{post?.userData?.body?.name}} {{post?.userData?.body?.surname}}</h2>
           <span><ion-icon name="star"></ion-icon> 4,7/5 - 6 puan</span>
         </ion-label>
       </ion-item>
       <div class="content-desc">
-        Güvenli, rahat ve keyifli yolculuk geçirmeniz dileğiyle....
+       {{post?.title}}
       </div>
-      <h1>Ersin kullanıcısına ulaş</h1>
+      <h1 *ngIf="userData?.uid!==post?.userData?.id" [routerLink]="['/chat',post?.userData?.id]">Ersin kullanıcısına ulaş</h1>
     </div>
     <hr>
-    <div class="users-blog">
+    <div *ngIf="userData?.uid===post?.userData?.id" class="users-blog">
       <h2>Yolcular</h2>
 
       <ion-item>
@@ -57,7 +65,11 @@
       </ion-item>
     </div>
   </div>
-  <div class="next">
-    <button routerLink="/reservation">Devam</button>
+  <div  *ngIf="userData?.uid!==post?.userData?.id" class="next">
+    <button (click)="submit()">Rezervasyon Oluştur</button>
+  </div>
+  <div  *ngIf="userData?.uid===post?.userData?.id" class="admın-btn">
+    <button (click)="editPost()">Düzenle</button>
+    <button (click)="deletePost()">Sil</button>
   </div>
 </ion-content>
