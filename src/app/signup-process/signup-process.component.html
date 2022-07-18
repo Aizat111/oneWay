@@ -18,7 +18,7 @@
       <div class="content-header">
      
         <h4> Parolaya ihtiyacın olacak. </h4>
-          <span>1 harf, 1 rakam ve 1 özel karakter içerecek şekilde en az 8 karakterden oluşmalıdır.</span>
+          <!-- <span>1 harf, 1 rakam ve 1 özel karakter içerecek şekilde en az 8 karakterden oluşmalıdır.</span> -->
       </div>
       <div class="input-form">
         <ion-input type="password" placeholder="Şifre" type= "password" formControlName="password"></ion-input>
@@ -29,8 +29,11 @@
         zaman abonelikten çıkabilirim
       </p>
       <div class="text-accept">
-        <span>OneWay'den haber, fırsat ve hediye almak istemiyorum</span>
-        <div> <ion-checkbox checked="false"></ion-checkbox></div>
+        <ion-item >
+          <span>OneWay'den haber, fırsat ve hediye almak istemiyorum</span>
+          <ion-checkbox checked="false" color="danger"></ion-checkbox>
+        </ion-item>
+
        
       </div>
       <ion-icon name="arrow-forward-circle-outline" class="content-continue" (click)="register()"></ion-icon>

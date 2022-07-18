@@ -6,7 +6,7 @@
     type="address-line1"
     debounce="500"
     ionFocus
-    ionBlur [(ngModel)]="srcKey" (change)="getCities(srcKey)">
+    ionBlur [(ngModel)]="srcKey" (ionChange)="getCities(srcKey)">
     
   </ion-searchbar>
   <ion-list>

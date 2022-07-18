@@ -1,15 +1,16 @@
+ion-header, ion-toolbar{
+    background: #c6180a;
+    border: none;
+    color: white;
+    h2{
+        margin-left: 5%;
+    }
+}
 ion-content{
     *{
         //font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
     }
-    ion-header, ion-toolbar{
-        background: #c6180a;
-        border: none;
-        color: white;
-        h2{
-            margin-left: 5%;
-        }
-    }
+
     .main-header{
         height: 25vh;
         width:120%;
@@ -39,7 +40,7 @@ ion-content{
         }
     }
     ion-row{
-        margin-top: -40px;
+        margin-top: 0px;
         ion-col{
             ion-item{
                 width:100%;
@@ -73,6 +74,7 @@ ion-segment{
     ion-segment-button{
         height: 35px;
         font-size: 15px;
-       
+        --color-checked:#c6180a;
+        --indicator-color:#c6180a;
     }
 }

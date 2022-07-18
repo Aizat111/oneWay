@@ -38,8 +38,11 @@ ion-content{
             }
         }
     }
+    .info-btn{
+
+    }
     ion-row{
-        margin-top: -40px;
+        margin-top: 0px;
         ion-col{
             ion-item{
                 width:100%;
@@ -48,8 +51,10 @@ ion-content{
                 border:none;
                 //box-shadow: 1px var(--ion-color-dark);
                 border-radius: 5px;
+
             }
         }
+
     }
     ion-list{
         ion-item{
@@ -73,6 +78,8 @@ ion-segment{
     ion-segment-button{
         height: 35px;
         font-size: 15px;
-       
+        --color-checked:#c6180a;
+        --indicator-color:#c6180a;
+        
     }
 }

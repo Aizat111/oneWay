@@ -5,18 +5,21 @@ ion-content {
     //width: 90%;
     .content {
       height: 100%;
+
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       margin: 5px auto;
       // margin-left: 15px;
+    
       &-header {
         width: 90%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        margin: 0px auto !important;
         &-close {
           font-size: 40px;
           color: #c6180a;
@@ -42,6 +45,7 @@ ion-content {
       .input-form {
         width: 90%;
         text-align: left;
+        margin: 0px auto !important;
         ion-input {
           height: 60px;
           width: 100%;
@@ -52,6 +56,8 @@ ion-content {
           background-color: #EEEEEE;
         }
         .text-accept{
+           width: 90%;
+           margin: 0px auto;
             margin-top: 30px;
             display: flex;
             flex-direction: row;
@@ -62,7 +68,7 @@ ion-content {
             }
             span{
                 font-size: 22px;
-               margin: 0px 25px 0px 0px;
+         
             }
         }
       }
@@ -72,6 +78,7 @@ ion-content {
         font-size: 13px;
         text-align: left;
         margin-top: 20px;
+        margin: 10px auto;
 
       }
     &-continue{
@@ -86,7 +93,26 @@ ion-content {
   }
   ion-radio{
     border: 1px black solid;
-    border-radius: 100%;
+    border-radius: 50%;
     --color-checked:#c6180a;
   }
+}
+input[type="radio"] {
+  /* ...existing styles */
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
 }

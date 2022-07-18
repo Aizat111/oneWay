@@ -13,6 +13,7 @@ import { PublishService } from '../services/publish/publish.service';
 export class Tab1Page implements OnInit{
 
   countPsgnr=1;
+  options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   todaysDate:any=new Date();
   from:any = [];
   to:any = [];
@@ -21,7 +22,9 @@ export class Tab1Page implements OnInit{
   constructor(private modalController:ModalController, private postApi: PublishService, private _cdr: ChangeDetectorRef,
     private router: Router) {}
   ngOnInit(){
-    this.todaysDate=this.todaysDate.toString().slice(3,15);
+    this.todaysDate=this.todaysDate.toLocaleDateString('tr').toString().slice(0,10).split('.');
+    this.todaysDate = this.todaysDate[2]+'-'+ this.todaysDate[1]+'-'+ this.todaysDate[0]
+    console.log(this.todaysDate)
   }
 
   async countPassenger(){

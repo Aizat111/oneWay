@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "oneWay",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

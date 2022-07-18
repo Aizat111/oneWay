@@ -47,35 +47,45 @@ ion-header {
 }
 
 .header {
-    width: 89.4%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px auto !important;
-  
-    text-align: start;
-    z-index: 0;
+  width: 89.4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px auto !important;
 
-    .header-title {
-      width: 100%;
-      border-radius: 20px;
-      background-color: #EEEEEE !important;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      padding: 5px;
-      padding-left: 10px;
-      display: flex;
-.title{
-    margin-left: 10px;
-}
-      h5{
-          margin: 0px !important;
-      }
+  text-align: start;
+  z-index: 0;
+
+  .header-title {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #eeeeee !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 5px;
+    padding-left: 10px;
+    display: flex;
+    .title {
+      margin-left: 10px;
     }
-    .date{
-        font-size: 12px;
+    h5 {
+      margin: 0px !important;
     }
-  
   }
+  .date {
+    font-size: 12px;
+  }
+}
+
+ion-searchbar {
+
+  .searchbar-input-container {
+    border-radius: 20px !important;
+    input {
+      font-size: 14px !important;
+      border-radius: 20px !important;
+    }
+  }
+}
